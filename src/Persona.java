@@ -79,13 +79,16 @@ public class Persona {
 
     @Override
     public String toString() {
-        return "Persona{" +
-                "nombre='" + nombre + '\'' +
-                ", apellido='" + apellido + '\'' +
-                ", edad=" + edad +
-                ", documento=" + documento +
-                ", perros adoptados=" + perrosAdoptados.size() +
-                '}';
+        return "Persona \n" +
+                "Nombre: " + nombre + "\n" +
+                "Apellido: " + apellido + "\n" +
+                "Edad: " + edad + "\n" +
+                "Documento: " + documento + "\n" +
+                "Perros adoptados: " + perrosAdoptados.size() + "\n" +
+                "-----------------------------";
+
     }
+
+
 }
 

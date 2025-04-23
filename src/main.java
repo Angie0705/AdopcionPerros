@@ -21,7 +21,7 @@ import java.util.Scanner;
                     3. Ver personas registradas
                     4. Ver perros disponibles
                     5. Adoptar perro
-                    6. Consultar el perro más viejo 
+                    6. Consultar el perro más viejo adoptado 
                     7. Salir
                     """);
 
@@ -49,6 +49,7 @@ import java.util.Scanner;
 
                     listaPerros.add(new Perro(placa, nombre, raza, edad, tamaño));
                     System.out.println("Perro registrado exitosamente");
+                    System.out.println("----------------------------- \n");
                 }
 
                 case 2 -> {
@@ -68,6 +69,7 @@ import java.util.Scanner;
 
                     listaPersonas.add(new Persona(nombre, apellido, edad, documento));
                     System.out.println("Persona registrada exitosamente");
+                    System.out.println("----------------------------- \n ");
                 }
 
                 case 3 -> {
@@ -82,7 +84,7 @@ import java.util.Scanner;
                 }
 
                 case 4 -> {
-                    System.out.println("\n--- Perros Disponibles ---");
+                    System.out.println("\n--- Perros Disponibles para adoptar ---");
                     if (listaPerros.isEmpty()) {
                         System.out.println("No hay perros disponibles para adoptar.");
                     } else {
@@ -121,13 +123,13 @@ import java.util.Scanner;
                         if (perroAdoptado != null) {
                             personaAdopta.adoptarPerro(perroAdoptado);
                             listaPerros.remove(perroAdoptado);
-                            System.out.println("¡Adopción realizada con éxito!");
+                            System.out.println("¡Adopción realizada con éxito! \n");
                         } else {
-                            System.out.println("No se encontró un perro con esa placa.");
+                            System.out.println("No se encontró un perro con esa placa. \n");
                         }
 
                     } else {
-                        System.out.println("No se encontró ninguna persona con ese documento.");
+                        System.out.println("No se encontró ninguna persona con ese documento. \n");
                     }
                 }
 
@@ -149,18 +151,22 @@ import java.util.Scanner;
                         Perro perroViejo = personaConsulta.perroMasGrande();
                         if (perroViejo != null) {
                             System.out.println("El perro más viejo adoptado por " + personaConsulta.getNombre() +
-                                    " es: " + perroViejo.getNombre() + " (Edad: " + perroViejo.getEdad() + " años).");
+                                    " es: " + perroViejo.getNombre() + " (Edad: " + perroViejo.getEdad() + " años). \n");
+
                         } else {
-                            System.out.println(personaConsulta.getNombre() + " no ha adoptado ningún perro.");
+                            System.out.println(personaConsulta.getNombre() + " no ha adoptado ningún perro. \n");
+
                         }
                     } else {
-                        System.out.println("No se encontró ninguna persona con ese documento.");
+                        System.out.println("No se encontró ninguna persona con ese documento. ");
+
                     }
                 }
 
-                case 7 -> System.out.println("Saliendo del programa. ¡Hasta luego!");
+                case 7 -> System.out.println("Saliendo del programa. ¡Hasta luego! \n");
 
-                default -> System.out.println("Opción inválida. Por favor, intente de nuevo.");
+                default -> System.out.println("Opción inválida. Por favor, intente de nuevo. \n" );
+
             }
 
         } while (opc != 7);
